@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Supermercado</title>
+  </head>
+  <body>
+    <h1>Lista de super mercado</h1>
+
+    <p>
+      <label for="produto">Item:</label>
+      <input id="produto" type="text" />
+      <button onclick="adicionar()">Adicionar</button>
+      <span id="feedback"></span>
+    </p>
+
+    <ul id="lista"></ul>
+
+    <script>
+      function adicionar() {
+        // criando e selecionando elementos
+
+        const item = document.getElementById("produto");
+        const lista = document.getElementById("lista");
+        const li = document.createElement("li");
+        const feedback = document.getElementById("feedback");
+        const feedbackText = document.createElement('h4');
+
+        feedback.appendChild(feedbackText);
+
+        // resetando o feedback
+
+        feedbackText ? feedbackText.remove() : ''
+
+        // verificando se o item e nulo
+
+        if (item.value.trim() != "") {
+          // apendando os elementos
+
+          li.appendChild(document.createTextNode(item.value));
+          lista.appendChild(li);
+
+          feedback.appendChild(document.createTextNode(''))
+
+          // limpa o imput
+          item.value = "";
+        } else {
+            feedbackText.appendChild(document.createTextNode('Insira um item!'))
+        }
+      }
+    </script>
+  </body>
+</html>

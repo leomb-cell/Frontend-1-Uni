@@ -1,0 +1,26 @@
+.notas {
+    background-color: rgb(255, 0, 0);
+    border: 3px solid yellow;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    font-style: italic;
+    width: 300px;
+    text-align: justify;
+}
+
+.titulo_especial {
+    color: blue;
+    font-style: oblique;
+}
+
+.minha_classe {
+    color: white;
+    background-color: green;
+    width: 500px;
+    padding: 50px;
+    text-align: center;
+}
+
+.texto_italico {
+    font-style: italic;
+}

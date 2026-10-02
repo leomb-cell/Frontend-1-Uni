@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swich</title>
+</head>
+<body>
+    <h2>Clique na chave para ligar</h2>
+    <img id="chave" onClick="switchClick()" src="switch_off.png" alt="">
+    <script>
+        function switchClick() {
+            let e = document.getElementById("chave");
+            if (e.src.indexOf("switch_off.png") >= 0) {
+                e.src = "switch_on.png";
+            } else {
+                e.src = "switch_off.png";
+            }
+
+        }
+    </script>
+</body>
+</html>

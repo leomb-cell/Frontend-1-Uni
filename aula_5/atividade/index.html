@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // atividade 1
+
+      // a) 3333333333
+      console.log(10 % 3);
+
+      // b) 32
+      console.log("3" + 2);
+
+      // c) False
+      console.log(5 === "5");
+
+      // d) "b"
+      let v = ["a", "b", "c"];
+      console.log(v[1]);
+
+      // e) 0 2 4
+      for (let i = 0; i < 3; i++) {
+        console.log(i * 2);
+      }
+
+    //   Atividade 2
+
+    // Cada exercício mostra a saída esperada para você conferir se acertou.
+
+    // Crie uma variável nome com o seu nome e mostre no console: Olá, [nome].
+    //     Saída esperada: Olá, Maria
+
+    let leo = "Leo";
+    console.log(`Olá, ${leo}`)
+
+    // Peça ao usuário sua idade com prompt e mostre se ele é maior ou menor de idade. (Lembre do Number()!)
+    //     Digitando 20: Maior de idade
+    let idade = prompt('Digite a sua idade: ')
+
+    if (idade >= 18) {
+        console.log("Maior de idade.")
+    } else {
+        console.log("Menor de idade")
+    }
+
+    // Crie um vetor com os números [3, 8, 5, 12, 7] e mostre apenas os pares usando filter.
+    //     Saída esperada: [8, 12]
+
+    let nums = [3, 8, 5, 12, 7];
+
+    let pares = nums.filter((num) => num % 2 == 0);
+
+    console.log(pares)
+
+    // Use map para gerar um novo vetor com o dobro dos números [1, 2, 3].
+    //     Saída esperada: [2, 4, 6]
+
+    let lista = [1,2,3]
+
+    let dobroLista = lista.map((num) => num * 2)
+
+    // Crie uma função maior(a, b) que retorne o maior dos dois números.
+    //     maior(4, 9) deve retornar 9
+
+    let maior = (a,b) => a > b ? a : b
+
+    console.log(`o numero ${maior(224, 2)} e maior`)
+
+    // Peça um número ao usuário e mostre a tabuada dele (de 1 a 10) usando for.
+    //     Digitando 3: 3 x 1 = 3, 3 x 2 = 6, ..., 3 x 10 = 30
+
+    let num = prompt("Insira um numero para uma tabuada: ")
+
+    for (let i = 0; i < 10; i++) {
+        console.log(`${num} x ${i} = ${num*i}`)
+    }
+
+
+
+    </script>
+  </body>
+</html>

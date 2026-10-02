@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let texto = "Olá";
+      let numero = 42;
+      let ativo = true;
+      let semValor;
+      let vazio = null;
+      let lista = [1, 2, 3];
+      let pessoa = {
+        nome: "João",
+        idade: 20,
+      };
+
+      // typeof mostra o tipo de uma variável
+      console.log(typeof texto); // "string"
+      console.log(typeof numero); // "number"
+      console.log(typeof ativo); // "boolean"
+      console.log(typeof semValor); // "undefined"
+      console.log(typeof pessoa); // "object"
+      console.log(typeof lista); // "object" (vetor é um tipo especial de objeto)
+
+      // Para acessar um valor de um objeto, usamos o ponto
+      console.log(pessoa.nome); // João
+    </script>
+  </body>
+</html>

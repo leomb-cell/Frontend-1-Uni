@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entrada de dados</title>
+  </head>
+  <body>
+    <label for="x">x:</label>
+    <input type="text" id="x" />
+    <br />
+    <label for="y">Y:</label>
+    <input type="text" id="y" />
+    <br />
+    <label for="out">Resultado</label>
+    <input type="text" id="out" disabled />
+    <br />
+    <button id="somar" onClick="somar();">Somar</button>
+
+    <p class="testeClasse"></p>
+    <p class="testeClasse"></p>
+    <p class="testeClasse"></p>
+    <p class="testeClasse"></p>
+    <p class="testeClasse"></p>
+    <p class="testeClasse"></p>
+    <p class="testeClasse"></p>
+    <p class="testeClasse"></p>
+    <p class="testeClasse"></p>
+    <p class="testeClasse"></p>
+
+    <script>
+      function somar() {
+        let x = document.getElementById("x");
+        let xValue = parseInt(x.value);
+        let y = document.getElementById("y");
+        let yValue = parseInt(y.value);
+        let out = xValue + yValue;
+        document.getElementById("out").value = out;
+        document.querySelectorAll(".testeClasse").forEach(e => {
+            e.innerHTML = out;
+        });
+      }
+    </script>
+  </body>
+</html>

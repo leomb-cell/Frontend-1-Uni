@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Removendo um paragrafo</h1>
+
+    <p id="meu-paragrafo">texto que será removido...</p>
+
+    <button onclick="remover()">Remover</button>
+
+    <script>
+        function remover() {
+            const paragrafo = document.getElementById('meu-paragrafo');
+
+            // if (paragrafo) {
+            //     paragrafo.remove();
+            // }
+
+            paragrafo ? paragrafo.remove() : ''
+        }
+    </script>
+</body>
+</html>

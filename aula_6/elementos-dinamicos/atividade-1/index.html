@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade 1</title>
+  </head>
+  <body>
+    <!--
+    Atividade 1
+
+    Crie um documento HTML.
+    Adicione um título H1 na página, com texto vazio.
+    Adicione um campo de texto de entrada com o label Nome.
+    Altere dinamicamente o título H1 sempre que o usuário digitar qualquer coisa no campo de texto.
+
+    Dica: pesquise o evento input, que é disparado a cada alteração no campo. Lembre-se da regra prática: use textContent, e não innerHTML.  -->
+
+    <h1 id="texto"></h1>
+
+    <form id="formulario">
+      <label for="nome">Nome:</label>
+      <input type="text" name="" id="nome" />
+    </form>
+
+    <script>
+      // const handleNome = (e) => document.getElementById('texto').appendChild(document.createTextNode(e.target.value))
+
+      const texto = document.getElementById("texto");
+      const nome = document.getElementById("nome");
+
+      function handleNome(e) {
+        const valor = e.target.value;
+        console.log(valor);
+
+        // limpando o texto anterior
+
+        if (texto.lastChild) {
+          texto.removeChild(texto.lastChild);
+        }
+
+        texto.appendChild(document.createTextNode(valor));
+      }
+
+      //   usando o evendo de input - cada vez que uma letra é adicionada ele sobreescreve a palavra inteira
+      nome.addEventListener("input", handleNome);
+      //   usando o evento de change - manda somente quando perde o foco no objeto
+      //   nome.addEventListener("change", handleNome);
+    </script>
+  </body>
+</html>

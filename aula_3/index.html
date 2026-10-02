@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Aula 3</title>
+  </head>
+  <body>
+    <!-- tabelas, formularios, divs -->
+    <h3>Cadastro de usuarios</h3>
+
+    <!-- formularios -->
+
+    <form>
+      <!-- text -->
+
+      <p><input type="text" name="id" id="id" placeholder="id" /></p>
+      <p><input type="text" name="nome" id="nome" placeholder="nome" /></p>
+
+      <!-- email -->
+
+      <p><input type="email" name="email" id="email" placeholder="email" /></p>
+
+      <!-- senha -->
+
+      <p><input type="password" name="senha" id="senha" placeholder="senha"></p>
+
+
+      <!-- input radio -->
+
+      <p>
+        <label for="feminino">feminino</label>
+        <input type="radio" name="genero" id="feminino" value="feminino" />
+      </p>
+      <p>
+        <label for="masculino">masculino</label>
+        <input type="radio" name="genero" id="masculino" value="masculino" />
+      </p>
+      <p>
+        <label for="NaoBinario">Não-binario</label>
+        <input type="radio" name="genero" id="NaoBinario" value="NaoBinario" />
+      </p>
+
+      <!-- select -->
+
+      <p>
+        <select name="lang" id="lang" size="1" multiple>
+          <option value="cpp">C++</option>
+          <option value="python">Python</option>
+          <option value="javascript">JavaScript</option>
+          <option value="go">go</option>
+        </select>
+      </p>
+
+      <!-- checkbox -->
+
+      <p>
+        <input type="checkbox" id="pref1" name="pref1" value="serie" />
+        <label for="pref1">Séries de TV</label>
+        <br />
+        <input type="checkbox" id="pref2" name="pref2" value="filmes" />
+        <label for="pref2">Filmes</label>
+        <br />
+        <input type="checkbox" id="pref3" name="pref3" value="animacao" />
+        <label for="pref3">Animação</label>
+      </p>
+
+      <!-- button -->
+
+      <p>
+        <button type="button">cadastrar</button>
+        <button type="button">excluir</button>
+        <button type="reset">limpar</button>
+      </p>
+
+      <!-- textarea -->
+
+      <p>
+        <textarea name="resumo" id="tesumo" cols="100" rows="10"></textarea>
+      </p>
+    </form>
+
+    <!-- tabelas -->
+
+    <table id="tabela">
+      <thead>
+        <tr id="cabecalho">
+          <th class="linha">ID</th>
+          <th class="linha">NOME</th>
+          <th class="linha">EMAIL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="linha">1</td>
+          <td class="linha">ferigo</td>
+          <td class="linha">sdfksjdf</td>
+        </tr>
+        <tr>
+          <td class="linha">2</td>
+          <td class="linha">Serigo</td>
+          <td class="linha">sdfksjdf</td>
+        </tr>
+        <tr>
+          <td class="linha">3</td>
+          <td class="linha">gerigo</td>
+          <td class="linha">sdfksjdf</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

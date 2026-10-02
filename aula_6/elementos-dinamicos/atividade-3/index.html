@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade 3</title>
+  </head>
+  <body>
+    <!-- Atividade 3
+
+    Crie um documento HTML.
+    Crie três campos de entrada (nome, telefone e e-mail).
+    Crie dois botões (adicionar e limpar).
+    Crie uma tabela com três colunas e os títulos Nome, Telefone e E-mail.
+    Ao preencher os campos e clicar no botão adicionar, crie uma linha na tabela com os dados dos campos e, em seguida, limpe os campos.
+    Ao clicar no botão limpar, exclua todas as linhas da tabela, menos a linha de títulos.
+
+    Dica: se os títulos estiverem no <thead> e os dados no <tbody>, basta esvaziar o <tbody>. Pesquise o método replaceChildren().  -->
+    <h1>Agenda de Contatos</h1>
+    <form id="formulario">
+      <div>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" />
+      </div>
+      <div>
+        <label for="telefone">Telefone:</label>
+        <input type="text" name="telefone" id="telefone" />
+      </div>
+      <div>
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" />
+      </div>
+      <button type="submit" id="addButton">Adicionar</button>
+      <button type="button" id="resetButton">Limpar</button>
+      <button type="button" id="nukeButton">Esvaziar</button>
+    </form>
+
+    <!-- mensagem de feedback -->
+
+    <h4 id="feedback"></h4>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Telefone</th>
+          <th>E-mail</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabela"></tbody>
+    </table>
+
+    <script>
+      // elementos globais
+      const formulario = document.getElementById("formulario");
+      const nome = document.getElementById("nome");
+      const telefone = document.getElementById("telefone");
+      const email = document.getElementById("email");
+      const tabela = document.getElementById("tabela");
+      const feedback = document.getElementById("feedback");
+      const resetBtn = document.getElementById("resetButton");
+      const nukeBtn = document.getElementById("nukeButton");
+
+      //   funções
+
+      function nukeContatos() {
+        tabela.replaceChildren();
+      }
+
+      function resetFields() {
+        nome.value = "";
+        telefone.value = "";
+        email.value = "";
+      }
+
+      function newContact(e) {
+        e.preventDefault();
+
+        // limpando feedback
+
+        feedback.lastChild && feedback.removeChild(feedback.lastChild);
+
+        // registrando valores e verificando validade
+        const valNome = nome.value.trim();
+        const valTelefone = telefone.value.trim();
+        const valEmail = email.value.trim();
+
+        if (valNome == "" || valTelefone == "" || valEmail == "") {
+          // mensagem de feedback de falha
+          feedback.appendChild(
+            document.createTextNode("Todos os campos são obrigatórios!"),
+          );
+        } else {
+          // mensagem de feedback de sucesso
+
+          feedback.appendChild(
+            document.createTextNode("Todos os campos são obrigatórios!"),
+          );
+
+          // criando a linha
+
+          const linha = document.createElement("tr");
+
+          // campo nome
+
+          const tdNome = document.createElement("td");
+          tdNome.appendChild(document.createTextNode(valNome));
+          linha.appendChild(tdNome); //adicionando elemento a linha
+
+          // campo telefone
+
+          const tdTelefone = document.createElement("td");
+          tdTelefone.appendChild(document.createTextNode(valTelefone));
+          linha.appendChild(tdTelefone); //adicionando elemento a linha
+
+          // campo email
+
+          const tdEmail = document.createElement("td");
+          tdEmail.appendChild(document.createTextNode(valEmail));
+          linha.appendChild(tdEmail); //adicionando elemento a linha
+
+          // campo delete
+
+          const tdAcoes = document.createElement("td");
+
+          const delBtn = document.createElement("button");
+
+          delBtn.type = "button";
+          delBtn.textContent = "X";
+
+          delBtn.addEventListener("click", function (e) {
+            const linhaItem = e.currentTarget.closest("tr");
+            linhaItem.remove();
+          });
+
+          tdAcoes.appendChild(delBtn);
+
+          linha.appendChild(tdAcoes); //adicionando elemento a linha
+
+          // appendando a linha na tabela
+
+          tabela.appendChild(linha);
+
+          //   limpando valores dos campos
+
+          resetFields();
+        }
+      }
+
+      //   eventos
+
+      formulario.addEventListener("submit", newContact);
+      resetBtn.addEventListener("click", resetFields);
+      nukeBtn.addEventListener("click", nukeContatos);
+
+    </script>
+  </body>
+</html>

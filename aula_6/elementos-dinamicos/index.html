@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Elementos Dinâmicos</title>
+</head>
+<body>
+    <h1>Lista do Supermercado</h1>
+    <p>
+        <label for="produto">Item:</label>
+        <input type="text" id="produto">
+        <button onclick="adicionar();">Adicionar</button>
+    </p>
+    <ul id="itens"></ul>
+
+    <script>
+        function adicionar() {
+            // Pega o campo de texto do produto
+            const produto = document.getElementById("produto");
+
+            // Cria um novo elemento <li>
+            const li = document.createElement("li");
+
+            // Coloca o texto digitado dentro do <li>
+            li.appendChild(document.createTextNode(produto.value));
+
+            // Pega a lista <ul>
+            const itens = document.getElementById("itens");
+
+            // Adiciona o <li> à lista, fazendo-o aparecer na tela
+            itens.appendChild(li);
+
+            // Limpa o campo de texto
+            produto.value = "";
+        }
+    </script>
+</body>
+</html>

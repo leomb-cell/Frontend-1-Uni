@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Cadastro de itens</h1>
+
+    <form id="formulario">
+      <label for="texto">Texto:</label>
+      <input type="text" id="texto" />
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>items</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody id="conteudo">
+        <!-- aqui serão inseridos os itens -->
+      </tbody>
+    </table>
+
+    <script>
+      // constantes de elementos
+
+      const formulario = document.getElementById("formulario");
+      const texto = document.getElementById("texto");
+      const tbody = document.getElementById("conteudo");
+
+      //   definindo o foco do cursor
+
+      texto.focus();
+
+      //   eventos
+
+      const adicionar = (e) => {
+        e.preventDefault();
+
+        // resgatar valor
+
+        const valor = texto.value.trim();
+
+        // tratando erro de texto vazio
+
+        if (valor == ''){
+            alert("O texto não pode estar vazio");
+            texto.focus()
+            return;
+        }
+
+        const tr = document.createElement("tr");
+
+        //  td do texto
+
+        const tdTexto = document.createElement("td");
+
+        tdTexto.appendChild(document.createTextNode(valor));
+
+        tr.appendChild(tdTexto);
+
+        // td do botão
+
+        const tdButton = document.createElement('td');
+
+        const botao = document.createElement("button");
+
+        botao.type = "button";
+
+        botao.textContent = "x";
+
+        botao.addEventListener("click", function(e) {
+            const linha = e.currentTarget.closest("tr");
+            linha.remove();
+        })
+
+        // APPENDANDO O elemento
+
+        tdButton.appendChild(botao);
+        tr.appendChild(tdButton);
+        tbody.appendChild(tr);
+
+        // resetando o imput
+
+        texto.value = ''
+        texto.focus()
+
+
+      };
+
+      formulario.addEventListener("submit", adicionar);
+
+
+
+    </script>
+  </body>
+</html>

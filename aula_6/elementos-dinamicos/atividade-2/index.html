@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade 2</title>
+  </head>
+  <body>
+    <!-- Atividade 2
+
+    Crie um documento HTML.
+    Crie um campo de texto e um botão ENVIAR.
+    Crie uma lista (bullets) vazia.
+    Ao clicar no botão ENVIAR, adicione um item na lista com o conteúdo do campo de texto e apague o conteúdo do campo.
+    Não permita adicionar itens vazios. -->
+
+    <form id="novo-item">
+      <label for="nome">Nome do item:</label>
+      <input type="text" name="nome" id="nome" />
+      <button type="submit">+</button>
+    </form>
+    <h4 id="feedback"></h4>
+    <ul id="lista"></ul>
+
+    <script>
+      // elements
+      const novoItem = document.getElementById("novo-item");
+      const nome = document.getElementById("nome");
+      const lista = document.getElementById("lista");
+      const feedback = document.getElementById("feedback");
+
+      function handleSubmit(e) {
+        e.preventDefault();
+
+        // formatando o texto do novo item
+
+        let item = nome.value.trim();
+
+        // limpando o campo de feedback do usuario
+
+        if (feedback.lastChild) {
+          feedback.removeChild(feedback.lastChild);
+        }
+
+        // tratamento de input vazio
+
+        if (item == "") {
+          // se for vazio é impresso uma mensagem de falha
+          feedback.appendChild(document.createTextNode("Campo obrigatório!"));
+        } else {
+          // se não for vazio é impresso uma mensagem de sucesso
+          feedback.appendChild(
+            document.createTextNode("Item adicionado com sucesso!"),
+          );
+
+          // criando e adicionando elemento a lista
+
+          const li = document.createElement("li");
+          li.appendChild(document.createTextNode(item));
+          lista.appendChild(li);
+        }
+        // limpando campo do imput
+        nome.value = "";
+        nome.focus();
+      }
+      novoItem.addEventListener("submit", handleSubmit);
+    </script>
+  </body>
+</html>
