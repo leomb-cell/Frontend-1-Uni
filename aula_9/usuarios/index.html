@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Usuários</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- A ordem importa: config, depois api, depois pagina -->
+    <script src="config.js" defer></script>
+    <script src="api.js" defer></script>
+    <script src="pagina.js" defer></script>
+</head>
+<body>
+    <h1>Usuários</h1>
+
+    <p id="mensagem" role="alert"></p>
+
+    <form id="formulario">
+        <h2 id="titulo-formulario">Novo usuário</h2>
+        <p>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" maxlength="50" required>
+        </p>
+        <p>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" maxlength="100" required>
+        </p>
+        <p class="btn-group">
+            <button type="submit" class="button" id="gravar">Cadastrar</button>
+            <button type="button" class="button" id="limpar">Limpar</button>
+            <button type="button" class="button" id="recarregar">Recarregar</button>
+        </p>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+</body>
+</html>

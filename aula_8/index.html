@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Integração com backend</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Scripts JS -->
+
+    <script src="api.js" defer></script>
+    <script src="pagina.js" defer></script>
+  </head>
+  <body>
+    <h1>Pesquisa de Séries</h1>
+    <form id="formulario" action="" method="get">
+      <label for="busca">Séries:</label>
+      <input type="search" name="busca" id="busca" required autofocus />
+      <button type="submit">Pesquisar</button>
+    </form>
+
+    <p id="mensagem"></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>CAPA</th>
+          <th>NOME</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+      <tbody id="tabela">
+        <!-- É aqui que tudo vai ser criado. -->
+      </tbody>
+    </table>
+  </body>
+</html>
